@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Présences BRP - C</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Présences BRP - C</h1>
+    <div class="season-band">Saison 2026 - 2027</div>
+  </header>
+
+  <main>
+    <section class="controls">
+      <button id="prevMonth">← Mois précédent</button>
+      <h2 id="monthTitle"></h2>
+      <button id="nextMonth">Mois suivant →</button>
+    </section>
+
+    <section class="admin-panel">
+      <div class="admin-header">
+        <h2>Gestion des événements</h2>
+        <button id="adminToggleBtn" class="secondary">Connexion admin</button>
+      </div>
+
+      <div id="adminContent" class="admin-content hidden">
+        <div class="form-grid">
+          <label>
+            Nom de l'événement
+            <input id="eventNameInput" type="text" placeholder="Ex. Entraînement, séance physique..." />
+          </label>
+          <label>
+            Date
+            <input id="eventDateInput" type="date" />
+          </label>
+          <label>
+            Heure
+            <input id="eventTimeInput" type="time" />
+          </label>
+          <label>
+            Lieu
+            <input id="eventLocationInput" type="text" placeholder="Optionnel" />
+          </label>
+        </div>
+        <button id="createEventBtn">Créer l'événement</button>
+      </div>
+    </section>
+
+    <section id="calendar" class="calendar"></section>
+
+    <section class="results">
+      <h2>Résultats de l'événement sélectionné</h2>
+      <p id="selectedDateLabel">Clique sur un événement.</p>
+      <div class="result-actions">
+        <button id="exportDayBtn" disabled>Exporter cet événement en Excel</button>
+        <button id="exportAllBtn">Exporter le mois en Excel</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Joueur</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody id="resultsBody"></tbody>
+      </table>
+    </section>
+  </main>
+
+
+  <div id="adminLoginModal" class="modal hidden">
+    <div class="modal-card">
+      <h2>Connexion admin</h2>
+      <p>Entrez le mot de passe coach pour accéder à la gestion des événements.</p>
+      <input id="adminPasswordInput" type="password" placeholder="Mot de passe" autocomplete="current-password" />
+      <p id="adminErrorText" class="error-text hidden">Mot de passe incorrect.</p>
+      <div class="modal-actions">
+        <button id="adminLoginBtn">Valider</button>
+        <button id="adminCancelBtn" class="secondary">Annuler</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="confirmModal" class="modal hidden">
+    <div class="modal-card">
+      <h2>Confirmer le joueur</h2>
+      <p>Tu as sélectionné : <strong id="confirmPlayerName"></strong></p>
+      <div class="modal-actions">
+        <button id="validatePlayerBtn">Valider</button>
+        <button id="changePlayerBtn" class="secondary">Changer</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="statusModal" class="modal hidden">
+    <div class="modal-card">
+      <h2>Présence</h2>
+      <p id="statusText"></p>
+      <div class="status-actions">
+        <button id="presentBtn" class="present-btn">Présent</button>
+        <button id="absentBtn" class="absent-btn">Absent</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
