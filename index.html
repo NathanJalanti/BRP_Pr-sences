@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BRP Présences - Test Supabase</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Présences BRP - C</h1>
+    <div class="season-band">Saison 2026 - 2027</div>
+    <p>Test connexion Supabase</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>V8.5 — Test Supabase</h2>
+      <p>Cette version sert uniquement à vérifier que GitHub Pages communique correctement avec Supabase avant la migration complète de la V7.</p>
+
+      <div class="actions">
+        <button id="testConnectionBtn">Tester la connexion</button>
+        <button id="loadPlayersBtn">Lire les joueurs</button>
+        <button id="createEventBtn">Créer un événement test</button>
+      </div>
+
+      <div id="statusBox" class="status-box">En attente de test.</div>
+    </section>
+
+    <section class="card">
+      <h2>Résultats</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Test</th>
+            <th>Résultat</th>
+          </tr>
+        </thead>
+        <tbody id="resultsBody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>

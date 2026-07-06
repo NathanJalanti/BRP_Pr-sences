@@ -1,0 +1,103 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #17202a;
+}
+
+header {
+  padding: 24px 16px;
+  text-align: center;
+  background: #17202a;
+  color: white;
+}
+
+header h1 { margin: 0 0 8px; }
+
+header p {
+  margin: 8px 0 0;
+  opacity: 0.85;
+}
+
+.season-band {
+  margin: 6px auto 8px;
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 0.85;
+  letter-spacing: 0.5px;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.card {
+  margin-bottom: 20px;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: #1f6feb;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.status-box {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #eef2f7;
+  border: 1px solid #d5dbe3;
+  font-weight: 700;
+}
+
+.status-box.success {
+  background: #ecfdf3;
+  border-color: #abefc6;
+  color: #067647;
+}
+
+.status-box.error {
+  background: #fef3f2;
+  border-color: #fecdca;
+  color: #b42318;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  background: #17202a;
+  color: white;
+}
+
+@media (max-width: 760px) {
+  button { width: 100%; }
+}
